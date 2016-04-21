@@ -18,11 +18,16 @@ class Counter extends Component {
     clearInterval(this.interval);
   }
 
+  componentDidMount() {
+
+  }
+
+
   render() {
     return (
       <h1 style={{ color: this.props.color }}>
         Counter ({this.props.increment}): {this.state.counter}
-        this is hot reloading
+        this is hot reloading 123
       </h1>
     );
   }
