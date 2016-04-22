@@ -12,7 +12,7 @@ class _Body {
 
         return (
             <div className={`${x} ${this.getClassName()} bar`}>
-                Hello there!
+                Hello there browserify reload 123!
             </div>
         );
     }

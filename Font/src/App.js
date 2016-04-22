@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NICE, SUPER_NICE } from './colors';
+import $ from 'jquery'
 
 class Counter extends Component {
   constructor(props) {
@@ -8,10 +9,19 @@ class Counter extends Component {
     this.interval = setInterval(() => this.tick(), 1000);
   }
 
+  //tick() {
+  //
+  //  this.setState({
+  //    counter: this.state.counter + this.props.increment
+  //  });
+  //}
+
   tick() {
-    this.setState({
-      counter: this.state.counter + this.props.increment
-    });
+    $.get({url:'/greeting?name='+this.state.counter,success:(respons)=>{
+      this.setState({
+        counter: respons.id
+      });
+    }})
   }
 
   componentWillUnmount() {
